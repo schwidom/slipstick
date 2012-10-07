@@ -5,8 +5,13 @@ prefix="skala1_"
 
 source( 'plotSlipStick.R')
 
-png( 'slipstick.png', width=10000, height= 900)
+for( r in 1:3)
+{
 
-plotSlipStick( depth=3) # depth=3 default, 4 geht, 2 geht
+ #png( paste( 'slipstick_r', r, '.png', sep=''), width=10000, height= 900)
+ png( paste( 'slipstick_r', r, '.png', sep=''), width=2000, height= 900)
 
-dev.off()
+ plotSlipStick( depth= 3, repeats= r) # depth=3 default, 4 geht, 2 geht
+
+ dev.off()
+}
